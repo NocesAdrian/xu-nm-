@@ -6,9 +6,13 @@
 #include <math.h>
 
 // ----- User Defined headers ----- //
+#include "INCLUDE/fileio.h"
 
 
+// --------- MAIN ---------- //
 int main() {
+    
+    fetch_stringf("src");
 
     return 0;
 }
