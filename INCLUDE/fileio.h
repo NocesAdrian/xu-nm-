@@ -11,8 +11,10 @@ typedef struct {
 } storage;
 
 // Function: fetch strings from a file into 'array'
-int fetch_stringf(const char* filename);
-
+int fetch_stringf(const char *, storage *);
+int print_strinf(storage *);
+int free_storage(storage *);
+int init_storage(storage *);
 // Global variable holding the file contents
 extern storage array;
 
