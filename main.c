@@ -11,8 +11,6 @@
 
 // --------- MAIN ---------- //
 int main() {
-    
-    fetch_stringf("src");
 
     return 0;
 }
