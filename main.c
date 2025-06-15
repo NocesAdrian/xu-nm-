@@ -6,16 +6,19 @@
 #include <math.h>
 
 // ----- Creator Defined headers ----- //
-#include "INCLUDE/fileio.h"
+#include "HEADERS/fileio.h"
 
 
 // --------- MAIN ---------- //
 int main() {
-    storage array;
 
-    fetch_stringf("SRC/test.txt", &array);
-    print_strinf(&array);
-    
-    printf("%zu", array.count);
+    StringStorage array;
+
+    fetch_stringf("DATA/src/test.txt", &array, 1500);
+    printf("count: %ld\n", array.count);
+    print_elements(&array);
+    free_array(&array);
+    print_elements(&array);
+ 
     return 0;
 }

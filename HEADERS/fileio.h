@@ -8,14 +8,17 @@ typedef struct {
     char **elements; // Array of strings
     size_t count;       // Number of lines
     size_t capacity;
-} storage;
+} StringStorage;
 
-// Function: fetch strings from a file into 'array'
-int fetch_stringf(const char *, storage *);
-int print_strinf(storage *);
-int free_storage(storage *);
-int init_storage(storage *);
+// user Usable Functions
+int fetch_stringf(const char *, StringStorage *, size_t);
+int print_elements(StringStorage *);
+int free_array(StringStorage *);
+
+// source owned function
+int init_storage(StringStorage *);
+
 // Global variable holding the file contents
-extern storage array;
+extern StringStorage array;
 
 #endif // FILEIO_H

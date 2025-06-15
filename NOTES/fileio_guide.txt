@@ -1,0 +1,56 @@
+// ------------------------------ USAGE 1 ------------------------------- //
+
+
+// ----------- headers ----------- //
+#include <stdio.h>
+#include <stddef.h>
+
+// ----- Creator Defined headers ----- //
+#include "HAVOC/fileio.h"
+
+// --------- MAIN ---------- //
+int main() {
+    // must Define an array where to store the fetched strings
+    StringStorage array;
+
+    // funtion to get the strings from file and append it on an array
+    // par1: file source, par2: struct array, par3: byte for buffer per line of a file
+    fetch_stringf("DATA/src/test.txt", &array, 1500);
+
+    // prints the elements on the array // -> print_elements(array->elements);
+    print_elements(&array);
+    
+    // prints the count of elements that are fetched
+    printf("count: %ld", array.count);
+    
+    // free the array
+    free_array(&array);
+    
+    return 0;
+}
+
+// -------------- USAGE 2 ------------------- //
+
+// ----------- headers ----------- //
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stddef.h>
+#include <math.h>
+
+// ----- Creator Defined headers ----- //
+#include "HAVOC/fileio.h"
+
+
+// --------- MAIN ---------- //
+int main() {
+
+    StringStorage array;
+
+    fetch_stringf("DATA/src/test.txt", &array, 1500);
+    printf("count: %ld\n", array.count);
+    print_elements(&array);
+    free_array(&array);
+    print_elements(&array);
+    return 0;
+}
