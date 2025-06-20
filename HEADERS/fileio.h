@@ -5,20 +5,31 @@
 
 // Struct to store fetched file lines
 typedef struct {
-    char **elements; // Array of strings
-    size_t count;       // Number of lines
-    size_t capacity;
-} StringStorage;
+    char **strings;         // Array of strings
+    char *chars;            // Array of chars
+    int *integers;          // Array of integers
+
+    size_t string_line_count;      // Number of lines
+    size_t char_line_count;      // Number of lines
+    size_t integer_line_count;      // Number of lines
+    
+    size_t string_capacity;        // capacity
+    size_t char_capacity;        // capacity
+    size_t integer_capacity;        // capacity
+} FileInfoBuffer;
 
 // user Usable Functions
-int fetch_stringf(const char *, StringStorage *, size_t);
-int print_elements(StringStorage *);
-int free_array(StringStorage *);
+int fetch_stringf(const char *, FileInfoBuffer *, size_t);         // (filename, FileInfo, bytes per line)
+int print_stringf(FileInfoBuffer *);                               // (FileInfo)  
+
+int free_allf(FileInfoBuffer *FileInfoBuffer);                    // free all
+int free_stringsf(FileInfoBuffer *);                             // (FileInfo)
+int free_charsf(FileInfoBuffer *);                               // (FileInfo)
+int free_integersf(FileInfoBuffer *);                            // (FileInfo)
 
 // source owned function
-int init_storage(StringStorage *);
-
-// Global variable holding the file contents
-extern StringStorage array;
+int init_stringf(FileInfoBuffer *);                             // (FileInfo)
+int init_charf(FileInfoBuffer *);                             // (FileInfo)
+int init_integerf(FileInfoBuffer *);                             // (FileInfo)
 
 #endif // FILEIO_H

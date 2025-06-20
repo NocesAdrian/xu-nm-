@@ -11,7 +11,8 @@
 
 // --------- MAIN ---------- //
 int main() {
-
+    
+    // must define a buffer first
     FileInfoBuffer StringBuffer;
     fetch_stringf("DATA/src/test.txt", &StringBuffer, 1500);
     print_stringf(&StringBuffer);
